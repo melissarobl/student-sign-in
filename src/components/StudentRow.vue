@@ -14,6 +14,7 @@ const notifyArrivedOrLeft = () => {
 }
 
 const confirmThenDeleteStudent = () => {
+  if (confirm(`Delete ${props.student.name}?`))
   emit('delete-student', props.student) //send prop back to StudentTable
 }
 

@@ -51,9 +51,11 @@ const pluralStudentMessage = computed ( () => {
 
               <StudentRow
                   v-for="student in sortedStudents"
+                  v-bind:key="student.starID"
                   v-bind:student="student"
-                  v-on:arrived-or-left="arrivedOrLeft"
                   v-on:delete-student="deleteStudent"
+                  v-on:arrived-or-left="arrivedOrLeft"
+
               ></StudentRow>
               <!-- one student row created for each student -->
               <!-- in v-bind the first 'student' is prop, second is value. Send a student object to each student row component.   -->
